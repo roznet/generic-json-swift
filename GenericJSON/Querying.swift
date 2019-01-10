@@ -13,11 +13,28 @@ public extension JSON {
     /// Return the float value if this is a `.number`, otherwise `nil`
     public var floatValue: Float? {
         if case .number(let value) = self {
-            return value
+            return Float(value)
         }
         return nil
     }
 
+    /// Return the float value if this is a `.number`, otherwise `nil`
+    public var doubleValue: Double? {
+        if case .number(let value) = self {
+            return Double(value)
+        }
+        return nil
+    }
+    
+    /// Return the float value if this is a `.number`, otherwise `nil`
+    public var intValue: Int? {
+        if case .number(let value) = self {
+            return Int(value)
+        }
+        return nil
+    }
+
+    
     /// Return the bool value if this is a `.bool`, otherwise `nil`
     public var boolValue: Bool? {
         if case .bool(let value) = self {
