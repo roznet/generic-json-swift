@@ -1,5 +1,5 @@
 import XCTest
-import GenericJSON
+@testable import GenericJSON
 
 class QueryingTests: XCTestCase {
 
