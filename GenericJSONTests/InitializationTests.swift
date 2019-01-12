@@ -15,6 +15,12 @@ class InitializationTests: XCTestCase {
             "a": [1, true],
             "b": ["foo", ["foo"], ["foo": true]],
         ])
+        let recursive = try JSON([ "json" : json ])
+        XCTAssertEqual(recursive, ["json" : [
+            "a": [1, true],
+            "b": ["foo", ["foo"], ["foo": true]],
+            ]
+            ])
     }
 
     func testUnknownTypeInitialization() {

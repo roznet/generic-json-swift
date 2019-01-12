@@ -21,6 +21,8 @@ extension JSON {
             self = .array(try array.map(JSON.init))
         case let dict as [String:Any]:
             self = .object(try dict.mapValues(JSON.init))
+        case let json as JSON:
+            self = json
         default:
             throw InitializationError()
         }
